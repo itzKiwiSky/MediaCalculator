@@ -3,6 +3,7 @@ import RegistroController from "./RegistroController.js";
 import { renderLista } from "./RegistroViewerController.js";
 
 let registroAtual = null;
+let modoEditar = false;
 const formDiv = document.getElementById("novo-registro-form");
 
 // elementos do formulario //
@@ -56,7 +57,7 @@ btnAdicionar.addEventListener("click", () => {
     adicionarLinha();
 });
 
-function adicionarLinha()
+function adicionarLinha(valuedef = 0)
 {
     if (formDiv.classList.contains("desativado") === true)
         return;
@@ -69,7 +70,7 @@ function adicionarLinha()
     const inp = document.createElement("input");
     inp.value = 20;
     inp.setAttribute("type", "number");
-    inp.setAttribute("placeholder", "20");
+    inp.setAttribute("placeholder", valuedef);
 
     const index = listaLitros.children.length;
     // Garante que o array tenha espaço para o novo valor
@@ -126,7 +127,19 @@ botaoSalvar.addEventListener("click", () => {
     registroAtual.mediaCalculada = resultado;
     registroAtual.litragemCalculada = result;
 
-    registrarDB(registroAtual);
+    if (registroAtual.id === undefined)
+        registrarDB(registroAtual);
+    else
+    {
+        const dboperation = RegistroController.update(registroAtual.id, registroAtual);
+        dboperation.then(
+        () => {
+
+        }, 
+        () => {
+
+        });
+    }
 
     resetar();
 
@@ -137,4 +150,28 @@ botaoSalvar.addEventListener("click", () => {
 
 async function registrarDB(data) {
     await RegistroController.add(data);
+}
+
+export function editarRegistro(index)
+{
+    const dbop = RegistroController.getById(index);
+    dbop.then(
+    (d) => {
+        console.log(d)
+        registroAtual = d;
+        formDiv.classList.remove("desativado");
+        nomeReg.value = d.nome;
+        distInicial.value = d.distInicial;
+        distFinal.value = d.distFinal;
+
+        for (let i = 0; i < d.listLitros.length; i++) 
+        {
+            const element = d.listLitros[i];
+            console.log(element);
+            adicionarLinha(element);
+        }
+    },
+    () => {
+
+    });
 }

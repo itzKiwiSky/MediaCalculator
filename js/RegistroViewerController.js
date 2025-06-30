@@ -1,3 +1,4 @@
+import { editarRegistro } from "./FormController.js";
 import RegistroController from "./RegistroController.js";
 import novoRegistroVazio from "./Registros.js";
 
@@ -103,7 +104,7 @@ export function renderLista()
             buttonEdit.setAttribute("type", "button");
             buttonEdit.setAttribute("id", "botao-editar");
             buttonEdit.addEventListener("click", () => {
-                
+                editarRegistro(element.id);
             });
             buttonEdit.textContent = "Editar";
             buttonEdit.classList.add("botao-lista", "editar");
