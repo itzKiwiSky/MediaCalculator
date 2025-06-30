@@ -1,0 +1,31 @@
+*
+{
+    margin:  0;
+    padding: 0;
+    box-sizing: 0;
+    text-align: center;
+}
+
+.media-table 
+{
+    margin-top: 2%;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.media-table td, th
+{
+    border: 2px solid #a3a3a3;
+    padding: 12px;
+}
+
+.media-table tr:nth-child(even) 
+{
+    background-color: #dddddd;
+}
+
+.botao-lista
+{
+    width: 100%;
+    font-size: 116%;
+}

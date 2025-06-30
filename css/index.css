@@ -1,0 +1,10 @@
+*
+{
+    margin:  0;
+    box-sizing: initial;
+}
+
+.desativado
+{
+    display: none;
+}
