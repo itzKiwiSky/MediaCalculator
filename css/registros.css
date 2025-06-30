@@ -1,16 +1,11 @@
-*
-{
-    margin:  0;
-    padding: 0;
-    box-sizing: 0;
-    text-align: center;
-}
-
 .media-table 
 {
     margin-top: 2%;
     border-collapse: collapse;
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
 }
 
 .media-table td, th
@@ -21,11 +16,23 @@
 
 .media-table tr:nth-child(even) 
 {
-    background-color: #dddddd;
+    background-color: var(--list-accent2);
+}
+
+.media-table tr:nth-child(odd) 
+{
+    background-color: var(--list-accent1);
 }
 
 .botao-lista
 {
     width: 100%;
     font-size: 116%;
+}
+
+.table-container 
+{
+    width: 100dvw;
+    max-width: 100dvw;
+    overflow-x: auto;
 }

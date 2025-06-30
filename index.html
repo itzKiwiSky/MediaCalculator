@@ -3,15 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/registros.css">
-        <link rel="stylesheet" href="css/utils.css">
+        <link rel="stylesheet" href="css/index.css">
         <title>Registro de medias</title>
     </head>
     <body>
-        <h1>Registro de medias</h1>
-        <button type="button" id="botao-limpar">Apagar tudo</button>
-        <button type="button" id="botao-atualizar">Atualizar</button>
-        <button type="button" id="botao-novo-registro">Novo registro</button>
+        <div class="container-titulo">
+            <h1>Registro de medias</h1>
+            <div class="botoes-titulo">
+                <button type="button" id="botao-limpar" class="botao-top">Apagar tudo</button>
+                <button type="button" id="botao-atualizar" class="botao-top">Atualizar</button>
+                <button type="button" id="botao-novo-registro" class="botao-top">Novo registro</button>
+                <button type="button" id="botao-exportar" class="botao-top">Exportar</button>
+            </div>
+        </div>
         <div id="novo-registro-form" class="desativado">
             <h2>Novo registro</h2>
             <label for="input" >Nome</label>
@@ -28,8 +32,10 @@
             <button type="button" id="botao-cancelar">Cancelar</button>
             <button type="button" id="botao-salvar">Salvar e calcular</button>
         </div>
-        <table class="media-table" id="lista-media"></table>
-        <h2 id="registro-warn">Nenhum registro foi encontrado no banco de dados!</h2>
+        <div class="table-container">
+            <table class="media-table" id="lista-media"></table>
+        </div>
+        <h2 id="registro-warn" class="regwarn">Nenhum registro foi encontrado no banco de dados!</h2>
         <script type="module" src="js/FormController.js"></script>
         <script type="module" src="js/RegistroViewerController.js"></script>
     </body>

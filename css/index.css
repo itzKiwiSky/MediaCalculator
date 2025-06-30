@@ -1,10 +1,62 @@
-*
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("./registros.css");
+@import url("./utils.css");
+
+:root
 {
-    margin:  0;
-    box-sizing: initial;
+    --list-accent1: #5a6684;
+    --list-accent2: #3a4871;
+    --background: #494c65;
+    --button-accent: #53729c;
+    --button-border: #b3c6d8;
 }
 
-.desativado
+*
 {
-    display: none;
+    padding: 0;
+    margin:  0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body
+{
+    background-color: var(--background);
+}
+
+.container-titulo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    color: white;
+}
+
+.container-titulo h1 {
+    margin-bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Agrupa os botões em uma linha centralizada */
+
+.botoes-titulo {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
+    text-align: center;
+}
+
+.botao-top
+{
+    background-color: var(--button-accent);
+    color: white;
+    border: 3px solid var(--button-border);
+    padding: 10px;
+}
+
+.regwarn
+{
+    text-align: center;
+    color: white;
 }

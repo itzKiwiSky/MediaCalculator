@@ -63,23 +63,23 @@ function adicionarLinha(valuedef = 0)
     if (formDiv.classList.contains("desativado") === true)
         return;
 
+    const index = listaLitros.children.length;
     const linha = document.createElement("div");
     const text = document.createElement("label");
     text.setAttribute("for", "input");
     text.textContent = "litros: ";
     linha.appendChild(text);
     const inp = document.createElement("input");
-    inp.value = 20;
+    inp.value = valuedef
     inp.setAttribute("type", "number");
     inp.setAttribute("placeholder", valuedef);
 
-    const index = listaLitros.children.length;
     // Garante que o array tenha espaço para o novo valor
-    registroAtual.listLitros[index] = parseInt(inp.value);
+    registroAtual.listLitros[index] = Number(inp.value);
 
     inp.addEventListener("input", (e) => {
         // adiciona a linha no registro interno //
-        registroAtual.listLitros[index] = parseInt(inp.value);
+        registroAtual.listLitros[index] = Number(inp.value);
     });
 
     linha.appendChild(inp);
@@ -108,9 +108,9 @@ botaoSalvar.addEventListener("click", () => {
         alert("O nome do posto não pode ser vazio!");
         return;
     }
-    if (registroAtual.distInicial <= 0 || registroAtual.distFinal <= 0) 
+    if (registroAtual.distInicial < 0 || registroAtual.distFinal <= 0) 
     {
-        alert("As distâncias devem ser maiores que zero!");
+        alert("A distancia inicial nao pode ser menor que 0");
         return;
     }
     // calcula a media //

@@ -1,7 +1,7 @@
+import exportFile from "./Export.js";
 import { editarRegistro } from "./FormController.js";
 import RegistroController from "./RegistroController.js";
 import novoRegistroVazio from "./Registros.js";
-
 
 const botaoAtualizar = document.getElementById("botao-atualizar");
 botaoAtualizar.addEventListener("click", renderLista);
@@ -18,6 +18,17 @@ botaoApagar.onclick = () => {
         renderLista();
     });
 }
+
+const botaoExportar = document.getElementById("botao-exportar");
+botaoExportar.onclick = async () => {
+    const db = RegistroController.getAll();
+    db.then((d) => {
+        console.log("aaaa")
+        exportFile("csv", d);
+    });
+
+    //exportFile();
+};
 
 function debugAddReg() 
 {
