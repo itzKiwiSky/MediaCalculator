@@ -49,7 +49,8 @@ listaLitros.onkeydown = (ev) => {
     if (formDiv.classList.contains("desativado") === true)
         return;
 
-    adicionarLinha();
+    if (e.key === "Enter")
+        adicionarLinha();
 };
 const btnAdicionar = document.getElementById('adicionar-btn');
 
@@ -78,8 +79,7 @@ function adicionarLinha(valuedef = 0)
 
     inp.addEventListener("input", (e) => {
         // adiciona a linha no registro interno //
-        if (e.key === "Enter")
-            registroAtual.listLitros[index] = parseInt(inp.value);
+        registroAtual.listLitros[index] = parseInt(inp.value);
     });
 
     linha.appendChild(inp);
