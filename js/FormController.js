@@ -78,7 +78,8 @@ function adicionarLinha(valuedef = 0)
 
     inp.addEventListener("input", (e) => {
         // adiciona a linha no registro interno //
-        registroAtual.listLitros[index] = parseInt(inp.value);
+        if (e.key === "Enter")
+            registroAtual.listLitros[index] = parseInt(inp.value);
     });
 
     linha.appendChild(inp);
