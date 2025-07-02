@@ -12,7 +12,7 @@ export default function exportFile(format, data)
                     for (let f = 0; f < fields.length; f++) 
                     {
                         const field = fields[f];
-                        header += f < fields.length - 1 ? field + "," : field; // expected "field,";
+                        header += f < fields.length - 1 ? field + "," : field;
                     }
                     return header;
                 }
