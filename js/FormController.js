@@ -61,14 +61,12 @@ btnAdicionar.addEventListener("click", () => {
 function adicionarLinha(valuedef = 0)
 {
     if (formDiv.classList.contains("desativado") === true)
-        return;
+        return
+
+    
 
     const index = listaLitros.children.length;
     const linha = document.createElement("div");
-    const text = document.createElement("label");
-    text.setAttribute("for", "input");
-    text.textContent = "litros: ";
-    linha.appendChild(text);
     const inp = document.createElement("input");
     inp.value = valuedef
     inp.setAttribute("type", "number");
@@ -88,6 +86,7 @@ function adicionarLinha(valuedef = 0)
     btnRemove.setAttribute("type", "button");
     btnRemove.setAttribute("id", "btn-delete-key");
     btnRemove.setAttribute("value", "[X]");
+    btnRemove.classList.add("remover-lista");
     btnRemove.addEventListener("click", () => {
         listaLitros.removeChild(linha);
         registroAtual.listLitros.splice(index, 1);

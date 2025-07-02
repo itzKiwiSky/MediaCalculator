@@ -2,15 +2,6 @@
 @import url("./registros.css");
 @import url("./utils.css");
 
-:root
-{
-    --list-accent1: #5a6684;
-    --list-accent2: #3a4871;
-    --background: #494c65;
-    --button-accent: #53729c;
-    --button-border: #b3c6d8;
-}
-
 *
 {
     padding: 0;
@@ -24,22 +15,24 @@ body
     background-color: var(--background);
 }
 
-.container-titulo {
+.container-titulo 
+{
     display: flex;
     flex-direction: column;
     margin-bottom: 16px;
     color: white;
 }
 
-.container-titulo h1 {
-    margin-bottom: 8px;
+.container-titulo h1 
+{
+    margin-top: 2%;
+    margin-bottom: 3%;
     width: 100%;
     text-align: center;
 }
 
-/* Agrupa os botões em uma linha centralizada */
-
-.botoes-titulo {
+.botoes-titulo 
+{
     display: flex;
     flex-direction: row;
     gap: 8px;
@@ -52,7 +45,17 @@ body
     background-color: var(--button-accent);
     color: white;
     border: 3px solid var(--button-border);
+    border-radius: 14px;
     padding: 10px;
+    padding: 1%;
+}
+
+.botao-top:active
+{
+    background-color: var(--button-press);
+    border: 2px solid var(--button-border);
+    color: rgb(0, 0, 0);
+    padding: 1%;
 }
 
 .regwarn
@@ -60,3 +63,269 @@ body
     text-align: center;
     color: white;
 }
+
+.secao-form h2
+{
+    color: white;
+}
+
+@media screen and (max-width: 700px) and (min-width: 300px)
+{
+    .container-titulo h1 
+    {
+        font-size: 150%;
+    }
+
+    .container-titulo button 
+    {
+        font-size: 85%;
+    }
+
+    .main-formulario
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .secao-form
+    {
+        width: 80%;
+        background-color: var(--background2);
+        padding: 4%;
+        margin: 3%;
+        border: 2px solid var(--button-border);
+        border-radius: 15px;
+        box-shadow: 10px 10px 20px black;
+    }
+
+    .secao-form h2
+    {
+        text-align: center;
+        font-size: 130%;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 700px)
+{
+    .container-titulo h1 
+    {
+        font-size: 190%;
+    }
+
+    .container-titulo button 
+    {
+        font-size: 90%;
+    }
+
+    .main-formulario
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-formulario button
+    {
+        font-size: 106%;
+    }
+
+    .secao-form
+    {
+        width: 50%;
+        background-color: var(--background2);
+        padding: 4%;
+        margin: 3%;
+        border: 2px solid var(--button-border);
+        border-radius: 15px;
+        box-shadow: 10px 10px 20px black;
+    }
+
+    .secao-form h2
+    {
+        text-align: center;
+        font-size: 180%;
+    }
+}
+
+@media only screen and not (max-width: 1000px) 
+{
+    .container-titulo h1 
+    {
+        font-size: 230%;
+    }
+
+    .container-titulo button 
+    {
+        font-size: 100%;
+    }
+
+    .main-formulario
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-formulario button
+    {
+        font-size: 130%;
+    }
+
+    .secao-form
+    {
+        width: 50%;
+        background-color: var(--background2);
+        padding: 4%;
+        margin: 3%;
+        border: 2px solid var(--button-border);
+        border-radius: 15px;
+        box-shadow: 10px 10px 20px black;
+    }
+
+    .secao-form h2
+    {
+        text-align: center;
+        font-size: 180%;
+    }
+}
+
+.secao-form button
+{
+    background-color: var(--button-accent);
+    border: 2px solid var(--button-border);
+    color: white;
+    padding: 1.5%;
+    border-radius: 14px;
+}
+
+.secao-form button:active
+{
+    background-color: var(--button-press);
+    border: 2px solid var(--button-border);
+    color: rgb(0, 0, 0);
+    padding: 1.5%;
+}
+
+
+.secao-form .botao-add-item
+{
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+
+.secao-form .flex-row
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.secao-form label
+{
+    margin-right: 1.5%;
+    color: white;
+    text-align: center;
+}
+
+.lista-litragem
+{
+    background-color: var(--background3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3%;
+    border-radius: 8px;
+}
+
+.lista-litragem div
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+.lista-litragem div input
+{
+    padding: 4px 3px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.lista-litragem div input,
+.lista-litragem div .remover-lista 
+{
+    height: 36px; /* ajuste conforme necessário */
+    font-size: 1rem;
+}
+
+.lista-litragem div input 
+{
+    width: 160px; /* ajuste conforme necessário */
+}
+
+.lista-litragem div .remover-lista 
+{
+    width: 48px; /* ajuste conforme necessário */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.botoes-form
+{
+    margin-top: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.botoes-form button
+{
+    margin-left: 4%;
+}
+
+.lista-litragem div .remover-lista
+{
+    border: 2px solid var(--button-list-remover-border);
+    border-radius: 4px;
+    background-color: var(--button-list-remover-accent);
+    color: white;
+    font-size: 116%;
+    text-align: center;
+}
+
+.lista-litragem div .remover-lista:hover,active
+{
+    border: 2px solid var(--button-list-remover-accent);
+    background-color: var(--button-list-remover-border);
+}
+
+.secao-form .form-dados input
+{
+    width: 100%;
+    padding: 4px 3px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 4%;
+}
+
+.icone-botao
+{
+    &[text="Apagar tudo"]
+    {
+        background-image: url("../assets/icone_remover.svg");
+    }
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-right: 48px;
+}
+

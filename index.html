@@ -4,6 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/index.css">
+        <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
         <title>Registro de medias</title>
     </head>
     <body>
@@ -16,26 +21,36 @@
                 <button type="button" id="botao-exportar" class="botao-top">Exportar</button>
             </div>
         </div>
-        <div id="novo-registro-form" class="desativado">
-            <h2>Novo registro</h2>
-            <label for="input" >Nome</label>
-            <input type="text" id="nome-reg-input"><br>
-            <label for="input" >Distancia inicial</label>
-            <input type="number" id="dist-inicial-input"><br>
-            <label for="input" >Distancia final</label>
-            <input type="number" id="dist-final-input">
-            <div>
-                <div id="lista-litros">
+        <div class="main-formulario">
+            <div id="novo-registro-form" class="secao-form desativado">
+                <h2>Novo registro</h2>
+                <div class="form-dados">
+                    <label for="input" >Nome</label>
+                    <input type="text" id="nome-reg-input"><br>
+                    <label for="input" >Distancia inicial</label>
+                    <input type="number" id="dist-inicial-input"><br>
+                    <label for="input" >Distancia final</label>
+                    <input type="number" id="dist-final-input">
                 </div>
-                <button type="button" id="adicionar-btn">adicionar</button>
+                <div>
+                    <h2>Litragens</h2>
+                    <div id="lista-litros" class="lista-litragem"></div>
+                    <div class="flex-row">
+                        <button type="button" id="adicionar-btn" class="botao-add-item">adicionar</button>
+                    </div>
+                </div>
+                <div class="botoes-form">
+                    <button type="button" id="botao-cancelar">Cancelar</button>
+                    <button type="button" id="botao-salvar">Salvar e calcular</button>
+                </div>
             </div>
-            <button type="button" id="botao-cancelar">Cancelar</button>
-            <button type="button" id="botao-salvar">Salvar e calcular</button>
         </div>
-        <div class="table-container">
-            <table class="media-table" id="lista-media"></table>
+        <div class="container-body">
+            <div class="table-container">
+                <table class="media-table" id="lista-media"></table>
+            </div>
+            <h2 id="registro-warn" class="regwarn">Nenhum registro foi encontrado no banco de dados!</h2>
         </div>
-        <h2 id="registro-warn" class="regwarn">Nenhum registro foi encontrado no banco de dados!</h2>
         <script type="module" src="js/FormController.js"></script>
         <script type="module" src="js/RegistroViewerController.js"></script>
     </body>

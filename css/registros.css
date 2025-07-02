@@ -26,8 +26,40 @@
 
 .botao-lista
 {
-    width: 100%;
-    font-size: 116%;
+    font-size: 120%;
+}
+
+.editar
+{
+    border: 5px solid var(--button-list-editar-border);
+    border-radius: 5px;
+    background-color: var(--button-list-editar-accent);
+    padding: 5%;
+}
+
+.editar:hover,active
+{
+    border: 5px solid var(--button-list-editar-accent);
+    border-radius: 5px;
+    background-color: var(--button-list-editar-border);
+    padding: 5%;
+}
+
+
+.remover
+{
+    border: 5px solid var(--button-list-remover-border);
+    border-radius: 5px;
+    background-color: var(--button-list-remover-accent);
+    padding: 5%;
+}
+
+.remover:hover,active
+{
+    border: 5px solid var(--button-list-remover-accent);
+    border-radius: 5px;
+    background-color: var(--button-list-remover-border);
+    padding: 5%;
 }
 
 .table-container 
@@ -35,4 +67,9 @@
     width: 100dvw;
     max-width: 100dvw;
     overflow-x: auto;
+}
+
+.container-body
+{
+    margin-bottom: 15%;
 }

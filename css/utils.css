@@ -1,3 +1,21 @@
+:root
+{
+    --list-accent1: #5a6684;
+    --list-accent2: #3a4871;
+    --background: #494c65;
+    --background2: #2c2e3f;
+    --background3: #1a1d22;
+    --button-accent: #53729c;
+    --button-border: #b3c6d8;
+    --button-press: #7ccbdd;
+
+    --button-list-editar-border: #f0ba5d;
+    --button-list-editar-accent: #e08a29;
+
+    --button-list-remover-border: #f05d5d;
+    --button-list-remover-accent: #e02929;
+}
+
 .desativado
 {
     display: none;
